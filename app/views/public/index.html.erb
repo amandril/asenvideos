@@ -33,6 +33,4 @@
 	
 <% if session[:user_id] %>
 	<p><%= link_to "Manage Content", {:controller => 'access', :action => 'index'}, class: 'button-link' %></p>
-<% else %>
-	<p><%= link_to "Access", {:controller => 'access', :action => 'login'}, class: 'button-link' %></p>
 <% end %>
