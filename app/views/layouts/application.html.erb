@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asenvids</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <div class="wrap">
+
+	  	<% if !flash[:notice].blank? %>
+			<div id="notice-box">
+				<div class="notice">
+					<%= flash[:notice] %>
+				</div>
+			</div>
+		<% end %>
+	    <%= yield %>
+
+	</div>
+  </body>
+</html>

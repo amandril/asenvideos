@@ -1,0 +1,38 @@
+<h1 class="title">ASEN PDR Presentations</h1><br>
+
+		
+		<% @video.each do |vid| %>
+		<div class="video-item">
+			<div class="video-frame">
+				<%= video_embed(vid.video_url) %>
+			</div>
+			<table>
+				<tr>
+					<td class='bold'>
+						<% if session[:user_id] %>
+							<span class="actions"><a><%= vid.position %></a> |</span>
+						<% end %>
+						<%= vid.title %>
+						<% if session[:user_id] %>
+							<span class="actions">
+								| <%= link_to("Edit", :controller => 'access', :action => 'edit_video', :id => vid.id) %> | 
+								<%= link_to("Delete", :controller => 'access', :action => 'delete_video', :id => vid.id) %>
+							</span>
+						<% end %>
+					</td>
+				</tr>
+				<!-- <tr>
+					<td class="label"><%= label_tag("Description: ") %></td>
+					<td><%= truncate(vid.description, :length => 30, :omission => ' ...') %></td>
+				</tr> -->
+			</table>
+		</div>
+		<% end %>
+
+<br><br>
+	
+<% if session[:user_id] %>
+	<p><%= link_to "Manage Content", {:controller => 'access', :action => 'index'}, class: 'button-link' %></p>
+<% else %>
+	<p><%= link_to "Access", {:controller => 'access', :action => 'login'}, class: 'button-link' %></p>
+<% end %>
