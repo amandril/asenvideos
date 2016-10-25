@@ -1,5 +1,8 @@
 <h1 class="title">ASEN PDR Presentations</h1><br>
 
+<% if session[:user_id] %>
+	<p><%= link_to "Manage Content", {:controller => 'access', :action => 'index'}, class: 'button-link' %></p>
+<% end %><br><br>
 		
 		<% @video.each do |vid| %>
 		<div class="video-item">
@@ -28,9 +31,3 @@
 			</table>
 		</div>
 		<% end %>
-
-<br><br>
-	
-<% if session[:user_id] %>
-	<p><%= link_to "Manage Content", {:controller => 'access', :action => 'index'}, class: 'button-link' %></p>
-<% end %>

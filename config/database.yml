@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: asenvideos_production
-  username: asenvideos
+  database: postgresql-asymmetrical-79684
+  username: alexmandrila@gmail.com
   password: <%= ENV['ASENVIDEOS_DATABASE_PASSWORD'] %>
