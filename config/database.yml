@@ -80,7 +80,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: postgresql-asymmetrical-79684
-  username: alexmandrila@gmail.com
-  password: <%= ENV['ASENVIDEOS_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: utf8
+  database: db7uauqb69ect9
+  username: bbevnqagjasvlk
+  password: zR5-Q0VMHSJQTNdbrogXwQs_oe
+  host: ec2-54-243-249-149.compute-1.amazonaws.com
+  sslmode: require
